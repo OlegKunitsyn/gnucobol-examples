@@ -2,7 +2,7 @@
 My first GnuCOBOL library with banking functions
 
 <p align="center">
-  <img src="https://github.com/FIXME/banking/workflows/docker-ci/badge.svg" />
+  <img src="https://github.com/FIXME/demo-banking/workflows/docker-ci/badge.svg" />
 </p>
 
 ### iban-checksum
