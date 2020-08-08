@@ -18,3 +18,11 @@ You will learn and create an application-level library in COBOL. You will struct
 
 ### Article
 [Medium](https://medium.com/@oleg.kunitsyn/modern-cobol-package-tutorial-96d57bc7e23a)   
+
+## Event Logging Tutorial
+
+### Source-Code
+[gnucobol-examples/logging](https://github.com/OlegKunitsyn/gnucobol-examples/tree/master/logging)   
+
+### Article
+[Medium](https://medium.com/@oleg.kunitsyn/modern-cobol-event-logging-tutorial-6fcb92ad86c0)   
