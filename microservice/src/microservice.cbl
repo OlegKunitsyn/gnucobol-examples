@@ -65,14 +65,15 @@ working-storage section.
         05 filler pic x value "/".
         05 get-amount pic x(32).
     01 response.
-        05 filler pic x(9) value "HTTP/1.1" & SPACE.
-        05 response-status pic x(13).
-        05 filler pic x(2) value CRLF.
-        05 filler pic x(32) value "Content-Type: application/json" & CRLF.
-        05 filler pic x(16) value "Content-Length: ".
-        05 response-content-length pic 9(2).
-        05 filler pic x(2) value CRLF.
-        05 filler pic x(2) value CRLF.
+        05 response-header.
+            10 filler pic x(9) value "HTTP/1.1" & SPACE.
+            10 response-status pic x(13).
+            10 filler pic x(2) value CRLF.
+            10 filler pic x(32) value "Content-Type: application/json" & CRLF.
+            10 filler pic x(16) value "Content-Length: ".
+            10 response-content-length pic 9(2).
+            10 filler pic x(2) value CRLF.
+            10 filler pic x(2) value CRLF.
         05 response-content.
             10 filler pic x(11) value '{"amount": '.
             10 eur-amount pic z(14)9.9(16).
@@ -115,9 +116,8 @@ response-NOK section.
     perform response-any.
 
 response-any section.
-    move 1 to l-length.
-    string response delimited by size into l-buffer with pointer l-length.
-    subtract 1 from l-length.
+    string response delimited by size into l-buffer.
+    compute l-length = byte-length(response-header) + response-content-length.
     goback.
 end program http-handler.
 
